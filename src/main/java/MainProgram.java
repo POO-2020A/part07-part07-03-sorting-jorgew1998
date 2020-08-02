@@ -45,21 +45,18 @@ public class MainProgram {
        int aux = array[index1];
        array[index1] = array[index2];
        array[index2] = aux;
+      System.out.println(Arrays.toString(array));
      
   }
 
   public static void sort(int[] array) {
      
-      for(int i = array.length - 1; i > 0; i--) {
-        int menor = 0;
-        for(int j = 0; j < i; j++) {
-          if(array[j+1] > array[menor]) {
-            menor = j + 1;
-          }
-        }
-        Main.swap(array, i, menor);
-        System.out.println(Arrays.toString(array));
-      }
+       int menor;
+       System.out.println(Arrays.toString(array));
+       for(int i = 0; i < array.length - 1; i++) {
+         menor = indexOfSmallestFrom(array, i);
+         swap(array, i, menor);
+       }
   }
 
 }
